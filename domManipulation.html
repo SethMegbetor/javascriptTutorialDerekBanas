@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div id="sampDiv2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <em> Eos est labore quaerat </em>adipisci cumque
+                soluta consequatur dolorem impedit vero, voluptates ab nostrum optio animi beatae iusto ex ad ducimus
+                esse tenetur architecto amet. Provident error numquam</p>
+            <p> repellat libero <b> totam dolores blanditiis similique, obcaecati, </b> nostrum neque
+                necessitatibus!<em> Maiores, ipsum, </em> eos distinctio mollitia doloremque alias <b> expedita ab
+                    consectetur </b>esse animi odit quasi!
+            </p>
+        </div>
+
+        <img src="/Screenshot (9).png" alt="my image" id="logo2" height="180" width="180"><br>
+
+        <button id="goToGoogle">Go to Google</button><br>
+        <button id="forwardPage">Forward Page</button> <br>
+        <button id="backPage">Back Page</button> <br>
+        <button id="reload">Reload Page</button><br>
+
+        <script>
+
+            // get current web page
+            // document.write("Current URL : ", window.location.href, "<br/>");
+            // document.write("Current HOST : ", window.location.hostname, "<br/>");
+            // document.write("Current Path : ", window.location.pathname, "<br/>");
+
+            // document.getElementById('goToGoogle').onclick = function (event) { window.location.href = "http://google.com" }
+
+            // document.getElementById('forwardPage').onclick = function (event) {
+            //     history.forward();
+            // }
+
+            // document.getElementById('backPage').onclick = function (event) {
+            //     history.back();
+            // }
+
+            // document.getElementById('reload').onclick = function (event) {
+            //     window.location.reload(true);
+            // }
+
+            var pElements = document.getElementsByTagName('p');
+
+            pElements[1].style.backgroundColor = '#EFDECD';
+
+            document.childNodes[1].style.backgroundColor = '#FAEBD7';
+
+            var sampDiv2 = document.getElementById('sampDiv2');
+            sampDiv2.childNodes[1].style.backgroundColor = '#F0FF';
+
+            var sampDiv2 = document.getElementById('sampDiv2');
+            sampDiv2.childNodes[1].childNodes[1].style.backgroundColor = '#F0F90e';
+
+            document.write("Node Type : ", sampDiv2.childNodes[1].childNodes[1].nodeType, "<br/>");
+
+            document.write("Node Name : ", sampDiv2.childNodes[1].childNodes[1].nodeName, "<br/>");
+
+            // document.write("Logo has alt : ", myImage.hasAttribute("alt"), "<br/>");
+
+            var paragraph3 = document.createElement("p");
+
+            paragraph3.setAttribute("id", "paragraph3");
+
+            paragraph3.innerHTML = "llorem isp  hher er erwejrejre erw erew r ewrwe rwetet4w sef";
+
+            sampDiv2.appendChild(paragraph3);
+
+            sampDiv2.insertBefore(paragraph3, sampDiv2.childNodes[0]);
+
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            function Customer(name, street, city, state, email, balance) {
+                this.name = name;
+                this.street = street;
+                this.city = city;
+                this.state = state;
+                this.email = email;
+                this.balance = balance;
+                this.payDownBal = function (amtPaid) {
+                    this.balance -= amtPaid;
+                };
+                this.addToBal = function (amtCharged) {
+                    this.balance += amtPaid;
+                }
+
+            }
+
+            // creating a customised object
+            var cust2 = new Customer("Sally Smith", "234 Main", "Pittsburgh", "PA", "ssmith@aol.com", 0.00);
+
+            cust2.addToBal(15.50);
+
+            //static variable, share variable
+            Customer.prototype.isCreditAvail = true;
+
+            Customer.prototype.toString = function () {
+                return this.name + " lives at " + this.street + " in " + this.city + " " + this.state + " email : " + this.email + " and has a balance of $ " + this.balance.toFixed(2) + "Creditworthy : " + this.isCreditAvail;
+            }
+
+            document.write(cust2.toString());
+        </script>
+    </body>
+
+</html>

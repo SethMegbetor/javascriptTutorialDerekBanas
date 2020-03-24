@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div>
+            Enter your name:
+
+            <input type="text" id="name" name="name" size="30"
+                onblur="isTheFieldEmpty(this, document.getElementById('name_help'))" />
+            <span id="name_help"></span>
+        </div>
+
+        <script>
+
+            var custArray = ["Tom", "Bob", "Sally", "Sue"];
+
+            var getCust = function (index) {
+                if (index > custArray.length) {
+                    throw new RangeError("Index must be >= 0 and <= " + custArray.length);
+                } else {
+                    return custArray[index];
+                }
+            }
+
+            try {
+                document.write("Customer : ", getCust(5), "<br/>");
+            } catch (ex) {
+                if (ex instanceof RangeError) {
+                    document.write(ex.message + "<br/>");
+                }
+            }
+
+        </script>
+    </body>
+
+</html>

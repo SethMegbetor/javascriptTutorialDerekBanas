@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div>
+            Enter your name:
+
+            <input type="text" id="name" name="name" size="30"
+                onblur="isTheFieldEmpty(this, document.getElementById('name_help'))" />
+            <span id="name_help"></span>
+        </div>
+
+        <script>
+            function editNodeText(regex, input, helpId, helpMessage) {
+                if (!regex.test(input)) {
+                    if (helpId != null)
+                        while (helpId.childNodes[0]) {
+                            helpId.removeChild(helpId.childNodes[0]);
+                        }
+                    helpId.appendChild(document.createTextNode(helpMessage));
+                }
+                else {
+                    if (helpId != null) {
+                        while (helpId.chilNnodes[0]) {
+                            helpId.removeChild(helpId.childNodes[0]);
+                        }
+                    }
+                }
+            }
+
+            function isTheFieldEmpty(inputField, helpId) {
+                return editNodeText(/^[A-Za-z\.\' \-]{1,15}\s?[A-Za-z\.' \-]{1,15}\s?[A-Za-z\.\' \-]{1,15}/, inputField.value, helpId, "Please enter a valid name");
+            }
+
+        </script>
+    </body>
+
+</html>
